@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('/static/fonts/Inconsolata.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inconsolata-Bold';
+    src: url('/static/fonts/Inconsolata-Bold.ttf') format('truetype');
+}
+
+.center-img {
+    display: block;
+    margin: 0 auto;
+}
+
+html, body {
+    background-color: white;
+    min-height: 100vh;
+    margin: 10px;
+    padding: 0;
+}
+
+a {
+    text-decoration: underline;
+    color: rgb(255, 100, 255)
+}
+
+h1 {
+    font-family: 'Inconsolata-Bold';
+    color: rgb(40, 40, 40);
+    font-size: 40px;
+    text-align: center;
+    line-height: 1.2;
+
+    max-width: 1000px;
+    overflow-wrap: break-word;
+    white-space: normal;
+    margin: 50px auto;
+}
+
+h2 {
+    font-family: 'Inconsolata';
+    color: rgb(40, 40, 40);
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.2;
+
+    overflow-wrap: break-word;
+    white-space: normal;
+    margin: -20px auto;
+}
+
+h3 {
+    font-family: 'Inconsolata';
+    color: rgb(40, 40, 40);
+    font-size: 25px;
+    text-align: center;
+    line-height: 2;
+
+    max-width: 1000px;
+    overflow-wrap: break-word;
+    white-space: normal;
+    margin: -50px auto;
+}

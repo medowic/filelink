@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>filelink - Get access</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/favicon/site.webmanifest">
+    <style>
+        @font-face {
+            font-family: 'Inconsolata-Bold';
+            src: url('/static/fonts/Inconsolata-Bold.ttf') format('truetype');
+        }
+        h1 {
+            font-family: 'Inconsolata-Bold';
+            color: rgb(40, 40, 40);
+            font-size: 35px;
+            text-align: center;
+        }
+        .center-img {
+            display: block;
+            margin: 0 auto;
+        }
+        body {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <img src="/static/svg/logo.svg" class="center-img" width="350"/>
+    <h1>Redirecting...</h1>
+    <script>
+        fetch('/get-key')
+            .then(response => response.text())
+            .then(pass => {
+                let userInput = prompt("Enter passkey", "");
+                if (userInput === pass) {
+                    fetch('/check-key', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: 'password=' + encodeURIComponent(userInput)
+                    }).then(res => {
+                        if (res.ok) {
+                            window.location.href = "/success";
+                        } else {
+                            alert("Access denied: server error (couldn't check passkey)\n\nCheck that passkey was successful generated at backend or check that page can get access to root/check-key URL and try reload Filelink Server\n\nCorrupted at: root/access");
+                            window.location.href = "/";
+                        }
+                    });
+                } else {
+                    alert("Access denied: wrong passkey\n\nWhen you will close this alert, you will be redirected at home page");
+                    window.location.href = "/";
+                }
+            });
+    </script>
+</body>
+</html>

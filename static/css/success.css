@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Inconsolata';
+    src: url('/static/fonts/Inconsolata.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inconsolata-Bold';
+    src: url('/static/fonts/Inconsolata-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inconsolata-Light';
+    src: url('/static/fonts/Inconsolata-Light.ttf') format('truetype');
+}
+
+.center-img {
+    display: block;
+    margin: 0 auto;
+}
+
+html, body {
+    background-color: white;
+    min-height: 100vh;
+    margin: 10px;
+    padding: 0;
+}
+
+a {
+    text-decoration: underline;
+    color: rgb(255, 100, 255)
+}
+
+h1 {
+    font-family: 'Inconsolata-Bold';
+    color: rgb(40, 40, 40);
+    font-size: 40px;
+    text-align: left;
+    line-height: 1.5;
+
+    overflow-wrap: break-word;
+    white-space: normal;
+
+    margin: 10px 10px;
+}
+
+h2 {
+    font-family: 'Inconsolata';
+    color: rgb(40, 40, 40);
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.2;
+
+    overflow-wrap: break-word;
+    white-space: normal;
+    margin: -20px auto;
+}
+
+h5 {
+    font-family: 'Inconsolata-Bold';
+    color: rgb(40, 40, 40);
+    font-size: 18px;
+    text-align: left;
+    line-height: 1.2;
+    
+    overflow-wrap: break-word;
+    white-space: normal;
+
+    margin: 0 10px;
+}
+
+h6 {
+    font-family: 'Inconsolata-Light';
+    color: rgb(40, 40, 40);
+    font-size: 18px;
+    text-align: left;
+    line-height: 1.4;
+    
+    overflow-wrap: break-word;
+    white-space: normal;
+
+    margin: 20px 10px;
+}
