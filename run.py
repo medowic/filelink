@@ -2,7 +2,7 @@ import yaml
 from waitress import serve
 
 with open("config/config.yaml", "r", encoding="utf-8") as file:
-    cfg = yaml.load(file, Loader=yaml.FullLoader)
+    cfg = yaml.load(file, Loader=yaml.SafeLoader)
 
 host = str(cfg["server"]["address"])
 port = int(cfg["server"]["port"])
