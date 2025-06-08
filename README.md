@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="/static/svg/logo.svg" alt="Filelink" width="600">
+  <img src="/github/logo_github.svg" alt="Filelink" width="500">
 </h1>
 
 <p align="center">
@@ -8,7 +8,10 @@
 <p align="center"><strong>Fast data transfer and secure access in your browser</strong></p>
 
 # What is it?
-Share your folder with files with self-hosted server, locally or worldwide
+<h1 align="center">
+  <img src="/github/demo_success.png" alt="Demo" width="1000">
+</h1>
+<p align="center">Share your folder with files with self-hosted server, locally or worldwide just in browser</p>
 
 ## Why Filelink?
 - **Self-hosted**: run it right on your PC
