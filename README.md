@@ -58,7 +58,7 @@ git clone https://github.com/medowic/filelink.git
 ```
 2. Open the terminal in the folder where Filelink is located and make the `requirements.txt` file with all dependencies
 ```
-pip freeze > requrements.txt
+pip freeze > requirements.txt
 ```
 3. Install it from `requirements.txt`
 ```
@@ -76,7 +76,7 @@ git clone https://github.com/medowic/filelink.git
 ```
 2. Open the terminal in the folder where Filelink is located and make the `requirements.txt` file with all dependencies
 ```sh
-pip3 freeze > requrements.txt
+pip3 freeze > requirements.txt
 ```
 3.1. Install it from `requirements.txt`
 ```sh
