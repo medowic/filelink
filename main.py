@@ -60,7 +60,7 @@ def internal_error(error):
 
 @app.route('/')
 def index():
-    return show("w3/index.html") + f"<h6>Hosted by: {provider}</h6></body></html>"
+    return show("w3/index.html") + f"""<title>Filelink - {provider}</title>""" + f"""<h6>Hosted by: {provider}</h6></body></html>"""
 
 @app.route('/success')
 def success():
@@ -74,7 +74,7 @@ def success():
         size = sizer(getsize(f"files/{i}"))
         files += f"""<h5>{num}. <a href="/download/{i}">{i}</a> ({size})</h5>"""
         num += 1
-    return show("w3/success.html") + files + f"""<h6>{num-1} files. Hosted by: {provider}</h6></body></html>"""
+    return show("w3/success.html") + f"""<title>Files - {provider}</title>""" + files + f"""<h6>{num-1} files. Hosted by: {provider}</h6></body></html>"""
 
 @app.route('/access')
 def access():

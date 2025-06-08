@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>filelink - Get access</title>
+    <title>Authorization</title>
     <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
@@ -44,7 +44,7 @@
                         if (res.ok) {
                             window.location.href = "/success";
                         } else {
-                            alert("Access denied: server error (couldn't check passkey)\n\nCheck that passkey was successful generated at backend or check that page can get access to root/check-key URL and try reload Filelink Server\n\nCorrupted at: root/access");
+                            alert("Access denied: internal server error (couldn't check passkey)\n\nCheck that passkey was successful generated at backend or check that page can get access to root/check-key URL and try reload Filelink Server\n\nCorrupted at: root/access");
                             window.location.href = "/";
                         }
                     });
