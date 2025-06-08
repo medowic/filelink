@@ -7,7 +7,7 @@ with open("config/config.yaml", "r", encoding="utf-8") as file:
 host = str(cfg["server"]["address"])
 port = int(cfg["server"]["port"])
 
-print("Filelink Server - alpha\n")
+print("Filelink Server\n")
 print(f"Server started at http://{host}:{port}\n")
 
 from main import app
