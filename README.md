@@ -101,6 +101,10 @@ apt install python3-flask
 chmod +x setup.sh
 ./setup.sh
 ```
+For global-wide install of dependencies, use `--break-system-packages`:
+```sh
+./setup.sh --break-system-packages
+```
 
 ## Start
 In the parent directory, find the `run.py` file and run it
