@@ -1,12 +1,16 @@
 import secrets
 import string
 import yaml
+
 from flask import Flask, Response, send_from_directory, request, session, abort, render_template, url_for, redirect
 from os import environ, listdir
-from os.path import getsize
+from os.path import getsize, isdir
 
 with open("config/config.yaml", "r", encoding="utf-8") as file:
     cfg = yaml.load(file, Loader=yaml.SafeLoader)
+
+with open("tmp/path.tmp", "r", encoding="utf-8") as file:
+    path = file.read()
 
 app = Flask(__name__)
 app.secret_key = secrets.token_hex(64)
@@ -16,8 +20,6 @@ try:
 except (KeyError, TypeError):
     alphabet = string.ascii_letters + string.digits
     secure = ''.join(secrets.choice(alphabet) for _ in range(64))
-else:
-    print("NOTE: using passkey from config/config.yaml")
 
 try:
     provider = str(cfg["custom"]["username"])
@@ -28,11 +30,9 @@ except (KeyError, TypeError):
         provider = environ['USER']
         if provider == "root":
             provider = "admin"
-else:
-    print("NOTE: using username from config/config.yaml")
 
-print(f"\nHost: {provider}")
-print(f"Passkey: {secure}\n")
+print(f" * Host: {provider}")
+print(f" * Passkey: {secure}\n")
 
 def sizer(size_bytes):
     for unit in ['B', 'KB', 'MB', 'GB']:
@@ -68,12 +68,15 @@ def success():
     num = 1
     if not session.get('authorized'):
         return abort(403)
-    if not listdir("files"):
+    if not listdir(path):
         return show("w3/success.html") + f"""<h5>no files available</h5>""" + f"""<h6>Hosted by: {provider}</h6></body></html>"""
-    for i in listdir("files"):
-        size = sizer(getsize(f"files/{i}"))
-        files += f"""<h5>{num}. <a href="/download/{i}">{i}</a> ({size})</h5>"""
-        num += 1
+    for i in listdir(path):
+        if isdir(f"{path}/{i}"):
+            pass
+        else:
+            size = sizer(getsize(f"{path}/{i}"))
+            files += f"""<h5>{num}. <a href="/download/{i}">{i}</a> ({size})</h5>"""
+            num += 1
     return show("w3/success.html") + f"""<title>Files - {provider}</title>""" + files + f"""<h6>{num-1} files. Hosted by: {provider}</h6></body></html>"""
 
 @app.route('/access')
@@ -105,4 +108,4 @@ def check_password():
 def download_file(name):
     if not session.get('authorized'):
         return abort(403)
-    return send_from_directory("files", name, as_attachment=True)
+    return send_from_directory(path, name, as_attachment=True)

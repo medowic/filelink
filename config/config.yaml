@@ -14,9 +14,11 @@ server:
 custom:
   # Set passkey, if you need customize it
   # If not specified, the auto-generated string will contain 64 characters
-
   # passkey: some-passkey
 
   # Set the username, which will be indicated in the line "Hosted by:"
-
   # username: filelink-user
+
+  # Set the path to be used for file sharing.
+  # If not specified, the 'files/' directory will be used by default.
+  # path: /path/to/files
