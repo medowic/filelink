@@ -31,6 +31,13 @@ except (KeyError, TypeError):
         if provider == "root":
             provider = "admin"
 
+with open("tmp/daemon.yaml.tmp", "w", encoding="utf-8") as file:
+    wordlist = {
+        "provider": f"{provider}",
+        "secure": f"{secure}"
+    }
+    yaml.safe_dump(wordlist, file, allow_unicode=True)
+
 print(f" * Host: {provider}")
 print(f" * Passkey: {secure}\n")
 
