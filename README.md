@@ -110,6 +110,8 @@ In the parent directory, find the `run.py` file and run it
 ```
 python run.py
 ```
+> [!TIP]
+> Also, in the same directory, you can find the `start.cmd` file for quick running in a separate window
 ## Linux
 ```sh
 python3 run.py
