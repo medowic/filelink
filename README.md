@@ -50,15 +50,11 @@ http://localhost:8080/access?passkey=enter-passkey
 > [!NOTE]
 > Also, this project based on `Flask` and `Waitress`
 ## Windows
-1. Download source code or use `git`
+1. Download source code or clone repository by using `git`
 ```
 git clone https://github.com/medowic/filelink.git
 ```
-2. Open the terminal in the folder where Filelink is located and make the `requirements.txt` file with all dependencies
-```
-pip freeze > requirements.txt
-```
-3. Install it from `requirements.txt`
+2. Open the terminal in the folder where Filelink is located and install dependencies from the `requirements.txt` file
 ```
 pip install -r requirements.txt
 ```
@@ -72,12 +68,9 @@ pip install -r requirements.txt
 ```sh
 git clone https://github.com/medowic/filelink.git
 ```
-2. Open the terminal in the folder where Filelink is located and make the `requirements.txt` file with all dependencies
+2. Move to the directory where Filelink is located and install dependencies from `requirements.txt`
 ```sh
-pip3 freeze > requirements.txt
-```
-3.1. Install it from `requirements.txt`
-```sh
+cd filelink
 pip3 install -r requirements.txt
 ```
 > [!IMPORTANT]
@@ -85,9 +78,10 @@ pip3 install -r requirements.txt
 ```sh
 pip3 install -r requirements.txt --break-system-packages
 ```
-3.2. Also, on some Debian-based systems with `apt`, Flask can't be installed using `pip3`
-
-To install it, use `apt`
+> [!IMPORTANT]
+> Also, on some Debian-based systems with `apt`, Flask can't be installed using `pip3`
+>
+> To install it, use `apt`
 ```sh
 apt install python3-flask
 ```
