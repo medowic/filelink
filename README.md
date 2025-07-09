@@ -109,6 +109,11 @@ For global-wide install of dependencies, use `--break-system-packages`:
 ./setup.sh --break-system-packages
 ```
 
+### Install as daemon
+If you need a daemon to run Filelink as a background task (e. g. on a server), see [Filelink Daemon repository](https://github.com/medowic/filelink-daemon)
+
+Installation and how-to-run instructions will be provided there
+
 # Start
 In the parent directory, find the `run.py` file and run it
 ## Windows
