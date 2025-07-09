@@ -113,6 +113,9 @@ def check_password():
 
 @app.route('/download/<name>', methods=['GET'])
 def download_file(name):
+    key = request.args.get('passkey')
+    if key and key == secure:
+        session['authorized'] = True
     if not session.get('authorized'):
         return abort(403)
     return send_from_directory(path, name, as_attachment=True)

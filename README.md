@@ -7,7 +7,7 @@
 </p>
 <p align="center"><strong>Fast data transfer and secure access in your browser</strong></p>
 
-# What is it?
+#
 <h1 align="center">
   <img src="/github/demo_success.png" alt="Demo" width="1000">
 </h1>
@@ -16,33 +16,44 @@
 # Why Filelink?
 - **Self-hosted**: run it right on your PC
 - **Easy to use**: [4 steps](#how-to-use) to get access to the files
-- **Lightweight**: less than `512 KB` - you can take it anywhere!
+- **Lightweight**: less than `1 MB` - you can take it anywhere!
 - **Cross-platform**: Windows or Linux
 - **Secure**: nobody can get access without a passkey
 - **No limits**: share and download as many files as you want
 
 # How to use?
-### As client (user):
+## As client (user):
 1. Open the link where Filelink is hosted in your browser
 2. Click to `show files` button
 3. Enter the passkey that you received from host
 4. Get access to the folder and start downloading!
 
 > [!TIP]
-> Also, you can use the `?passkey=` key in link for direct access to the folder
+> Also, you can use the `?passkey=` key in link for direct access to the folder or to the file download
 
-For example:
+### Direct access (with auto-auth)
+To get direct access to the folder you need to set passkey on`/access` page after `?passkey=`
+
+**For example:**
 ```
 http://localhost:8080/access?passkey=enter-passkey
 ```
-*where* `enter-passkey` *is your passkey*
-> [!IMPORTANT]
-> Get direct access may be only on `/access` page
 
-### As server (host):
-1. Locate your files into `files` directory where Filelink is located
-2. [Install](#installation) and [run](#start) Filelink server
-3. Share passkey with users
+To download file direcly (without visit Filelink home page) you need to set passkey on `/download/[filename]` link after `?passkey=`
+
+**For example:**
+```
+http://localhost:8080/download/your-file?passkey=enter-passkey
+```
+
+> [!IMPORTANT]
+> Get direct access may be only on `/access` and `/download/[filename]` pages
+
+## As server (host):
+1. [Install](#installation) Filelink Server
+2. Locate your files into standard `files` directory where Filelink is located or locate files in a path that you have set in `config/config.yaml` (see [Configuration](#configuration))
+3. [Run](#start) Filelink Server
+4. Share passkey with users
 
 # Installation
 ### Requirements:
