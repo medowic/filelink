@@ -114,10 +114,23 @@ python3 run.py
 > [!NOTE]
 > By default, the server will start at `0.0.0.0:8080`
 
+# Setting up using arguments
+In any system you can setting up Filelink using arguments
 ### Set folder for file sharing
-In any system you can set the file sharing path in the first argument
+Use `-f` or `--folder` option
 ```
-./run.py /path/to/files
+> run.py -f /path/to/files
+```
+```
+> run.py --folder /path/to/files
+```
+### Disable update check
+Use `-o` or `--no-updates` option
+```
+> run.py -o
+```
+```
+> run.py --no-updates
 ```
 
 # Configuration
