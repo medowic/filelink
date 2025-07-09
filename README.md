@@ -128,7 +128,7 @@ python3 run.py
 ```
 
 > [!NOTE]
-> By default, the server will start at `0.0.0.0:8080`
+> By default, the server will start at `0.0.0.0:8080`. You can change this in `config/config.yaml` (see [Configuration](#configuration))
 
 # Setting up using arguments
 In any system you can setting up Filelink using arguments
