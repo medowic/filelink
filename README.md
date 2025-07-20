@@ -76,6 +76,10 @@ pip install -r requirements.txt
 
 ## Linux
 1. Clone repository
+> [!WARNING]
+> Installing using `git clone` include support for automatic updates using `git` or scripts
+>
+> It's not recommended to install Filelink without `git`
 ```sh
 git clone https://github.com/medowic/filelink.git
 ```
